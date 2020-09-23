@@ -1,4 +1,6 @@
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -10,9 +12,7 @@ public class accountUI {
         name(user);
         password(user);
         gender(user);
-        year(user);
-        month(user);
-        day(user);
+        birthdate(user);
 
     }
     public static void email(User user){
@@ -84,115 +84,31 @@ public class accountUI {
         }
     }
 
-    public static void year(User user){
-
+    public static void birthdate(User user){
+        System.out.println("Please enter your birthdate : (yyyy-MM-dd)");
         boolean trigger = true;
         while(trigger){
-            boolean isvalid = false;
-            System.out.println("Please enter your birthyear : ");
+
             Scanner scan = new Scanner(System.in);
-            String birthyear = scan.nextLine();
-            if (birthyear.length() == 0) {
-                System.out.println("Please enter a valid year");
+            String birthdate = scan.nextLine();
+            try {
+                SimpleDateFormat format=new SimpleDateFormat("yyyy-MM-dd");
+                format.setLenient(false);
+                Date date = format.parse(birthdate);
+
+            } catch (Exception e){
+                System.out.println("Please enter a valid date : ");
+                continue;
             }
-            else {
-                for (int i = 0; i < birthyear.length(); i++) {
-                    if (!Character.isDigit(birthyear.charAt(i))) {
-                        System.out.println("Please enter a valid year");
-                        break;
-                    }
-                    if (i == birthyear.length()-1) isvalid = true;
-                }
-                if (isvalid) {
-                    int y = 0;
-                    for (int i = 0; i < birthyear.length(); i++) {
-                        y = y*10 + birthyear.charAt(i)-'0';
-                    }
-                    //System.out.println(y);
-                    if (y > 2020 || y < 1900){
-                        System.out.println("Please enter a valid year");
-                    }
-                    else {
-                        user.setBirthyear(y);
-                        trigger = false;
-                    }
-                }
-            }
+            user.setBirthdate(birthdate);
+            trigger = false;
+
         }
     }
 
-    public static void month(User user){
 
-        boolean trigger = true;
-        while(trigger){
-            boolean isvalid = false;
-            System.out.println("Please enter your birthmonth : ");
-            Scanner scan = new Scanner(System.in);
-            String birthmonth = scan.nextLine();
-            if (birthmonth.length() == 0) {
-                System.out.println("Please enter a valid month");
-            }
-            else {
-                for (int i = 0; i < birthmonth.length(); i++) {
-                    if (!Character.isDigit(birthmonth.charAt(i))) {
-                        System.out.println("Please enter a valid month");
-                        break;
-                    }
-                    if (i == birthmonth.length()-1) isvalid = true;
-                }
-                if (isvalid) {
-                    int y = 0;
-                    for (int i = 0; i < birthmonth.length(); i++) {
-                        y = y*10 + birthmonth.charAt(i)-'0';
-                    }
-                    if (y > 12 || y < 0){
-                        System.out.println("Please enter a valid month");
-                    }
-                    else {
-                        user.setBirthmonth(y);
-                        trigger = false;
-                    }
-                }
-            }
-        }
-    }
 
-    public static void day(User user){
 
-        boolean trigger = true;
-        while(trigger){
-            boolean isvalid = false;
-            System.out.println("Please enter your birthday : ");
-            Scanner scan = new Scanner(System.in);
-            String birthday = scan.nextLine();
-            if (birthday.length() == 0) {
-                System.out.println("Please enter a valid day");
-            }
-            else {
-                for (int i = 0; i < birthday.length(); i++) {
-                    if (!Character.isDigit(birthday.charAt(i))) {
-                        System.out.println("Please enter a valid day");
-                        break;
-                    }
-                    if (i == birthday.length()-1) isvalid = true;
-                }
-                if (isvalid) {
-                    int y = 0;
-                    for (int i = 0; i < birthday.length(); i++) {
-                        y = y*10 + birthday.charAt(i)-'0';
-                    }
-                    if (y > 31 || y < 0){
-                        System.out.println("Please enter a valid day");
-                    }
-                    else {
-
-                        user.setBirthyear(y);
-                        trigger = false;
-                    }
-                }
-            }
-        }
-    }
 
 
 }

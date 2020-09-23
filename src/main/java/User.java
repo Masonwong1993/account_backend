@@ -2,9 +2,9 @@ public class User {
     private String email;
     private String password;
     private String name;
-    private int birthmonth;
-    private int birthyear;
-    private int birthdate;
+    //private int birthmonth;
+    //private int birthyear;
+    private String birthdate;
     private String gender;
 
     public void setEmail(String email){
@@ -19,13 +19,13 @@ public class User {
     public void setGender(String gender){
         this.gender = gender;
     }
-    public void setBirthmonth(int birthmonth){
-        this.birthmonth = birthmonth;
-    }
-    public void setBirthyear(int birthyear){
-        this.birthyear = birthyear;
-    }
-    public void setBirthdate(int birthdate){
+//    public void setBirthmonth(int birthmonth){
+//        this.birthmonth = birthmonth;
+//    }
+//    public void setBirthyear(int birthyear){
+//        this.birthyear = birthyear;
+//    }
+    public void setBirthdate(String birthdate){
         this.birthdate = birthdate;
     }
 
