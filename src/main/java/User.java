@@ -7,6 +7,14 @@ public class User {
     private String birthdate;
     private String gender;
 
+//    public User(String name, String email, String password, String birthdate, String gender){
+//        this.email = email;
+//        this.password = password;
+//        this.gender = gender;
+//        this.birthdate = birthdate;
+//        this.name = name;
+//    }
+
     public void setEmail(String email){
         this.email = email;
     }
@@ -19,12 +27,6 @@ public class User {
     public void setGender(String gender){
         this.gender = gender;
     }
-//    public void setBirthmonth(int birthmonth){
-//        this.birthmonth = birthmonth;
-//    }
-//    public void setBirthyear(int birthyear){
-//        this.birthyear = birthyear;
-//    }
     public void setBirthdate(String birthdate){
         this.birthdate = birthdate;
     }
