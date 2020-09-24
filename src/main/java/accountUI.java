@@ -6,6 +6,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class accountUI {
+
     public static void main(String[] args) {
         User user = new User();
         email(user);

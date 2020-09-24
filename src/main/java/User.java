@@ -30,5 +30,17 @@ public class User {
     public void setBirthdate(String birthdate){
         this.birthdate = birthdate;
     }
+    public String getEmail(){
+        return this.email;
+    }
+    public String getName(){
+        return this.name;
+    }
+    public String getBirthdate(){
+        return this.birthdate;
+    }
+    public String getGender(){
+        return this.gender;
+    }
 
 }
