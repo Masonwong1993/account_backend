@@ -1,7 +1,12 @@
 import java.util.ArrayList;
 
 public class DAO {
-    private ArrayList<User> Userlist = new ArrayList<User>();
+    private ArrayList<User> Userlist;
+
+    {
+        Userlist = new ArrayList<User>();
+    }
+
     public void addUser(User user) {
         Userlist.add(user);
     }
